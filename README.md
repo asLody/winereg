@@ -9,7 +9,14 @@ Rust library for parsing, writing, diffing, patching, and scripting Wine registr
 - Apply diffs/patches with configurable options.
 - Lightweight DSL for building or modifying registries.
 
-Add to your code (crate name `winereg`):
+### Install
+Add to `Cargo.toml`:
+```toml
+[dependencies]
+winereg = "0.1.0"
+```
+
+Use in code:
 ```rust
 use winereg::*;
 ```
@@ -66,7 +73,7 @@ use winereg::*;
 ### Quick Examples
 Load, tweak, save:
 ```rust
-use rustregedit::*;
+use winereg::*;
 
 let loaded = RegistryEditor::load_from_file("user.reg")?;
 let root = loaded.root_key.clone();
